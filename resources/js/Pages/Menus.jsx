@@ -9,7 +9,7 @@ export default function Menus(props) {
     const [filteredMenus, setFilteredMenus] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8888/")
+        fetch("http://localhost:8888/topMenus")
             .then((response) => response.json())
             .then((response) => {
                 setMenus(response);

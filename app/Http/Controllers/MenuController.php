@@ -27,7 +27,7 @@ class MenuController extends Controller
                 ->take(5)
                 ->get();
 
-            $menus[$cuisine->name] = $popularMenus->toArray();
+        $menus = array_merge($menus, $popularMenus->toArray());
         }
 
         return response()->json($menus);
