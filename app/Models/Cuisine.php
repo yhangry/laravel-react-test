@@ -15,4 +15,8 @@ class Cuisine extends Model
         'slug',
     ];
 
+    public function menus()
+{
+    return $this->hasMany(Menu::class);
+}
 }

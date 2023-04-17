@@ -25,12 +25,19 @@ Route::get('/', function () {
     ]);
 });
 
-// Use the menu controller to get the menus from the database and pass them to the view.
-Route::get('/menus', [MenuController::class, 'index']);
-
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// display top 5 menus by cuisine
+Route::get('/menus', function () {
+    return Inertia::render('Menus');
+});
+
+// fetch all menus
+Route::get('/topMenus', [MenuController::class, 'index']);
+
+// fetch top 5 menus from each cuisine
+Route::get('/topMenus', [MenuController::class, 'index']);
 
 require __DIR__.'/auth.php';

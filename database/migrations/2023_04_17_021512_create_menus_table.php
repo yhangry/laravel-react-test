@@ -20,8 +20,10 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('thumbnail')->nullable();
             $table->integer('price_per_person')->nullable();
+            $table->integer('number_of_orders')->nullable();
             $table->integer('cuisine_id')->nullable();
             $table->foreign('cuisine_id')->references('cuisine_id')->on('cuisines');
+            $table->string('cuisine_name')->nullable();
             $table->timestamps();        
         });
     }

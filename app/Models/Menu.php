@@ -15,7 +15,9 @@ class Menu extends Model
         'image',
         'thumbnail',
         'price_per_person',
+        'number_of_orders',
         'cuisine_id',
+        'cuisine_name',
     ];
 
 }

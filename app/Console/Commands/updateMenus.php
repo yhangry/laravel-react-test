@@ -50,6 +50,7 @@ class updateMenus extends Command
                 'price_per_person' => $menu['price_per_person'],
                 'number_of_orders' => $menu['number_of_orders'],
                 'cuisine_id' => $menu['cuisine']['id'],
+                'cuisine_name' => $menu['cuisine']['name'],
             ]);
         }
 
