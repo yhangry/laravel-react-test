@@ -35,9 +35,9 @@ Route::get('/menus', function () {
 });
 
 // fetch all menus
-Route::get('/topMenus', [MenuController::class, 'index']);
+Route::get('/', [MenuController::class, 'index']);
 
 // fetch top 5 menus from each cuisine
-Route::get('/topMenus', [MenuController::class, 'index']);
+Route::get('/topMenus', [MenuController::class, 'topMenus']);
 
 require __DIR__.'/auth.php';

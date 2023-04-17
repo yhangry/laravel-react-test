@@ -12,6 +12,12 @@ class MenuController extends Controller
 {
     public function index()
     {
+        $menus = Menu::all();
+        return response()->json($menus);
+    }
+
+    public function topMenus()
+    {
         $cuisines = Cuisine::all();
         $menus = [];
 
