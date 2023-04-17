@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Link, Head } from "@inertiajs/inertia-react";
+import { useEffect, useState } from "react";
 import Filter from "../Components/Filter";
 
 export default function Menus(props) {
@@ -42,16 +41,31 @@ export default function Menus(props) {
 
     return (
         <>
-            <Head title="Menus" />
-            <h1 className="text-center bg-red-400">Menus</h1>
-            <Filter
-                cuisines={cuisines}
-                selCuisines={selCuisines}
-                setSelCuisines={setSelCuisines}
-            />
-            <ul className="mt-2">
+            <div className="sticky top-0 z-10 bg-white border border-stone-200">
+                <h1 className="text-center py-6 text-3xl font-bold text-white bg-gradient-to-r from-pink-500 to-purple-500 shadow-lg">
+                    Menus
+                </h1>
+                <Filter
+                    cuisines={cuisines}
+                    selCuisines={selCuisines}
+                    setSelCuisines={setSelCuisines}
+                />
+            </div>
+            <ul className="mt-2 grid grid-cols-3 gap-4">
                 {filteredMenus.map((menu) => {
-                    return <li key={menu.name}>{menu.name}</li>;
+                    return (
+                        <li
+                            key={menu.name}
+                            className="border p-4 flex flex-col items-center"
+                        >
+                            <img
+                                src={menu.thumbnail}
+                                alt={menu.name}
+                                className="h-32 w-32 object-cover mb-4"
+                            />
+                            <span>{menu.name}</span>
+                        </li>
+                    );
                 })}
             </ul>
         </>
